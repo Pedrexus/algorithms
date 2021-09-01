@@ -28,3 +28,17 @@ def array(
         array = np.delete(array, np.in1d(array, to_remove))
 
     return list(array)
+
+
+def min_max(array: list[Real]) -> (Real, Real):
+    _min = float('inf')
+    _max = -_min
+
+    for x in array:
+        if x < _min:
+            _min = x
+
+        if x > _max:
+            _max = x
+
+    return _min, _max
